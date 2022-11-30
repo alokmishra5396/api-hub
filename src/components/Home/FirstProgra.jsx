@@ -18,6 +18,13 @@ const removeWhiteSpace = ()=>{
   let removeText = text.replace(/\s/g, "");
   setText(removeText)
 }
+const copyClick = ()=>{
+  navigator.clipboard.writeText(text);
+}
+
+const ClearText = ()=>{
+  setText('');
+}
  /*--------onChange Function-----*/
  const chValue = (e)=>{
  setText(e.target.value)
@@ -30,6 +37,8 @@ const removeWhiteSpace = ()=>{
       <button className='btn' onClick={toUpperCase}>Convert To UpperCase </button>
       <button className='btn' onClick={toLowerCase}>Convert To LowerCase </button>
       <button className='btn' onClick={removeWhiteSpace}>Remove White Space </button>
+      <button className='btn' onClick={ClearText}>Clear</button>
+      <button className='btn' onClick={copyClick}>Copy To ClipBoard</button>
      </div>
    </div>
   )
