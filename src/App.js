@@ -1,14 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       Coming soon....  
-      </header>
+  
+return(
+      <div className="App">
+       THis is sample site..
     </div>
-  );
+  )
 }
   
 export default App;

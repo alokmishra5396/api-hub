@@ -1,0 +1,166 @@
+/*-----------------Media query--------------*/
+@mixin breakpoint($point) {
+    @if $point == xl {
+      @media (max-width: 75em) { @content; }
+    }
+    @else if $point == minxl {
+      @media (min-width: 75em) { @content; }
+    }  
+    @else if $point == lg {
+      @media (max-width: 62em) { @content; }
+    }
+    @else if $point == md {
+      @media (max-width: 48em)  { @content; }
+    }
+    @else if $point == sm {
+      @media (max-width: 34em)  { @content; }
+    }  
+    @else if $point == mobile {
+      @media (max-width: 25em)  { @content; }
+    }  
+    @else if $point == mobilexs {
+      @media (max-width: 21.875em)  { @content; }
+    }      
+  }
+/*---------------how to use ---------------*/  
+// @include breakpoint(minxl) { /* Min 1200px */}
+
+// @include breakpoint(xl) { /* Max 1200px */}
+
+// @include breakpoint(lg) { /* 992px */}
+
+// @include breakpoint(md) { /* 768px */}
+
+// @include breakpoint(sm) { /* 575px */}
+
+/*---------------Media query last---------------------------*/
+
+
+/*---------------Border- radius start ---------*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+   -ms-border-radius: $radius;
+       border-radius: $radius;
+}
+//uses code example @include border-radius(10px);
+/*---------------Border- radius END ---------* 
+
+
+
+/*---------------------Box Sizing---------------*/
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+       -moz-box-sizing: $box-model; // Firefox <= 19
+            box-sizing: $box-model;
+  }
+  
+ // uses code example  @include box-sizing(border-box);
+  /*-----------------End Box Sizing*/
+
+
+
+  /*--------------Opacity---------------*/
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+  // uses code example   @include opacity(0.5);
+  /*----------------End Opacity------------*/
+
+
+
+/*---------------text overflow ellepses---------*/
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+//uses code example @include text-truncate;
+
+  /*---------------text overflow ellepses---------*/
+
+
+
+
+  /*-----------------Font size----------------------*/
+@mixin font-size($size: 12, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+//used code example ; @include font-size(16);
+
+/*-----------------End Font size------------*/
+
+
+/*-----------------Line Hight---------------*/
+@mixin line-height($height: 12, $base: 16){
+    line-height: $height + px;
+    line-height: ($height / $base) * 1rem;
+}
+// uses code :  @include line-height(24);
+
+/*------------------Line Height-------------*/
+
+
+/*-------------------Transition------------*/
+@mixin transition($values...) { 
+    $transitions: ();
+    @each $declaration in $values {
+        $prop: nth($declaration, 1);
+        $prop-opts: ();
+        $length: length($declaration);
+        @for $i from 2 through $length {
+            $prop-opts: append($prop-opts, nth($declaration, $i));   
+        }
+        $trans: ($prop, $prop-opts);
+        $transitions: append($transitions, $trans, comma);
+    }
+      
+    -webkit-transition: trans-prefix($transitions, webkit);
+    -moz-transition: trans-prefix($transitions, moz);
+    -o-transition: trans-prefix($transitions, o);
+    transition: $values;
+}
+
+
+//uses code example : @include transition(transform 0.2s ease-in 0.2s, opacity 0.2s ease);
+
+/*--------------------End Transition------------*/
+
+
+
+/*--------------------flex boxx---------------*/
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+   
+  @mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  @mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+  }
+   
+  @mixin flex-center-vert {
+    display: flex;
+    align-items: center;
+  }
+   
+  @mixin flex-center-horiz {
+    display: flex;
+    justify-content: center;
+  }
+  /*---------------flex box end---------*/
+  
+
+
+
+
+
