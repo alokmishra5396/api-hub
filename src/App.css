@@ -1,9 +1,25 @@
-.App {
-  align-items: center;
-  display:flex;
-  text-align: center;
-  justify-content:center;
-  height: 100vh;
-  color:black
+
+
+.container{
+    width: 90%;
+    margin:auto;
 }
+    textarea{
+        width: 90%;
+        margin:20px auto;
+        height: 100px;
+        border:1px solid gray;
+    }
+    textarea:focus{
+        outline:none;
+    }
+    .btn{
+     color: white;
+    background-color: #2874f0;
+    font-size: 18px;
+    padding:5px 10px;
+    border:none;
+    font-size:16px;
+    margin-right: 10px;
+    }
 

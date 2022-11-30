@@ -1,0 +1,13 @@
+@import '../../../assets/scss/font/font.scss';
+.container{
+    width: 90%;
+    margin:auto;
+
+    textarea{
+        width: 90%;
+        margin:20px auto;
+        height: 100px;
+        border:1px solid gray;
+    }
+
+}
