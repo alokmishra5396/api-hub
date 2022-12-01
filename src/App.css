@@ -1,11 +1,10 @@
-
-
 .container{
     width: 90%;
     margin:auto;
+    height: calc(100vh - 140px)
 }
     textarea{
-        width: 90%;
+        width: 100%;
         margin:20px auto;
         height: 100px;
         border:1px solid gray;
@@ -21,5 +20,6 @@
     border:none;
     font-size:16px;
     margin-right: 10px;
+    cursor:pointer;
     }
 
