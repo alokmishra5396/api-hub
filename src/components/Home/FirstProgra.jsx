@@ -5,8 +5,13 @@ import './styles/firstProgram.scss'
 export const FirstProgra = () => {
 
 const[text, setText] = useState();
+const[error, setError] = useState(false)
+
 /*----------to upper Case*/
  const toUpperCase = ()=>{
+  if(text.length<1){
+    alert('pls ente something')
+  }
   var upText = text.toUpperCase();
   setText(upText);
  }
@@ -39,7 +44,10 @@ const ClearText = ()=>{
 
   return (
     <div className="container">
-    <div className='text-wrapper'><textarea onChange={chValue} value={text} placeholder='please enter the text...'/></div>
+    <div className='text-wrapper'>
+      <textarea onChange={chValue} value={text} placeholder='please enter the text...'/>
+      
+      </div>
      <div className='btn-wrapper'>
       <button className='btn' onClick={toUpperCase}>Convert To UpperCase </button>
       <button className='btn' onClick={toLowerCase}>Convert To LowerCase </button>

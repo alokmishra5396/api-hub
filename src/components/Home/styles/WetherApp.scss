@@ -1,0 +1,19 @@
+@import '../../../assets/scss/font/font.scss';
+.Wether-App{
+    width: 90%;
+    margin:auto;
+    .wether-api{
+        width:500px;
+        padding:20px;
+        margin: auto;
+        background-color:#f5f2f2;
+        border-radius:10px;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        position: absolute;
+    }
+}
+.error{
+    color:red;
+}
