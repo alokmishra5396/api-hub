@@ -8,7 +8,7 @@ export const Wetherapi = () => {
     const searchWetherInfo = async ()=>{
 
         try{
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searcvalue}&unit s=metric&appid=4e05dc88c50f53b1d150acaf59e83aaf`;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searcvalue}&unit s=metric&appid=4e05dc88c50f53b1d150acaf59e83aaff`;
             let res = await fetch(url);
             let data  = await res.json();            
             const {temp, humidity, pressure} = data.main;
